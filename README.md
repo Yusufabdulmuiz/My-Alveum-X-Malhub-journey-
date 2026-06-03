@@ -1,5 +1,5 @@
 # About Me
-# I'm *Yusuf Abdulmuiz Olasunkanmi*
+# I'm *Yusuf Abdulmuiz Olasunkanmi*, a Biochemistry student at University of Ilorin.
 
 ## 1. What do I want to learn?
 I want to learn how to build complete full-stack applications and create production-ready software.
