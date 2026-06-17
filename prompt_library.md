@@ -1,15 +1,16 @@
-Prompt Library for AI Coding Assistants (Frontend Development)
+# Prompt Library for AI Coding Assistants (Frontend Development)
 
-Introduction
+## Introduction
 
 This prompt library contains three prompts designed for frontend development tasks: UI generation, debugging, and refactoring. Each prompt was tested using an AI coding assistant (ChatGPT).
 
 ---
 
-1. Code Generation Prompt
+# 1. Code Generation Prompt
 
-Prompt
+## Prompt
 
+```text
 Act as a senior frontend developer.
 
 Create a responsive React application using React.js and Tailwind CSS for managing a task list.
@@ -28,12 +29,13 @@ Each task should contain:
 - Completion Status
 
 Use component-based architecture and include proper state management using React hooks.
+```
 
-Test Result
+## Test Result
 
-AI Assistant Used: ChatGPT
+**AI Assistant Used:** ChatGPT
 
-Outcome
+### Outcome
 
 The AI generated:
 
@@ -41,23 +43,24 @@ The AI generated:
 - Reusable UI components
 - Task card component
 - Form component for adding/editing tasks
-- State management using useState
+- State management using `useState`
 - Responsive styling with Tailwind CSS
 
-Evaluation
+### Evaluation
 
  Functional UI implementation
 
  Followed component-based architecture
 
-Included responsive design
+ Included responsive design
 
 ---
 
-2. Debugging Prompt
+# 2. Debugging Prompt
 
-Prompt
+## Prompt
 
+```text
 Act as a frontend debugging expert.
 
 Analyze the following code and identify:
@@ -76,25 +79,28 @@ return (
 <button onClick={setCount(count + 1)}>
 Increase
 </button>
+
 <p>{count}</p>
 </div>
 );
 }
+```
 
-Test Result
+## Test Result
 
-AI Assistant Used: ChatGPT
+**AI Assistant Used:** ChatGPT
 
-Outcome
+### Outcome
 
 The AI identified that:
 
-- setCount(count + 1) executes immediately during rendering.
-- The onClick event requires a callback function.
-- State updates should happen only after user interaction.
+- `setCount(count + 1)` executes immediately during rendering.
+- `onClick` expects a callback function.
+- State updates should occur after user interaction.
 
-Corrected Code
+### Corrected Code
 
+```javascript
 function Counter() {
 const [count, setCount] = React.useState(0);
 
@@ -108,9 +114,94 @@ Increase
 </div>
 );
 }
+```
 
-Evaluation
+### Evaluation
 
+ Correctly identified event handling issue
+
+ Provided working React solution
+
+ Suggested frontend debugging practices
+
+---
+
+# 3. Refactoring Prompt
+
+## Prompt
+
+```text
+Act as a senior frontend engineer.
+
+Refactor the following React code to improve:
+
+- Readability
+- Maintainability
+- Component structure
+- Adherence to React best practices
+
+Explain all changes made.
+
+Code:
+
+function UserList(props){
+return(
+<div>
+{props.users.map((user,index)=>
+<div key={index}>
+{user.active==true&&<p>{user.name}</p>}
+</div>
+)}
+</div>
+)
+}
+```
+
+## Test Result
+
+**AI Assistant Used:** ChatGPT
+
+### Refactored Code
+
+```javascript
+function UserList({ users }) {
+return (
+<div>
+{users
+.filter(user => user.active)
+.map(user => (
+<p key={user.name}>
+{user.name}
+</p>
+))}
+</div>
+);
+}
+```
+
+### Changes Made
+
+1. Used object destructuring for props.
+2. Removed unnecessary wrapper elements.
+3. Replaced `== true` with direct boolean checking.
+4. Filtered active users before rendering.
+5. Improved readability and maintainability.
+
+### Evaluation
+
+ Cleaner component structure
+
+ Improved React practices
+
+ Easier to maintain and extend
+
+---
+
+# Conclusion
+
+This prompt library demonstrates how AI coding assistants can support frontend development through UI generation, debugging, and refactoring.
+
+Well-structured prompts produce more responsive, maintainable, and scalable frontend applications.
  Correctly identified event handling issue
 
  Provided working React solution
